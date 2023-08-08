@@ -15,9 +15,9 @@ SECRET_KEY = 'purple-unicorn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vasil-elogistics.azurewebsites.net', '127.0.0.1']
+ALLOWED_HOSTS = ['https://exlogistics-ci-cd.onrender.com', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://vasil-elogistics.azurewebsites.net', 'http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://https://exlogistics-ci-cd.onrender.com', 'http://127.0.0.1']
 
 
 # Application definition
