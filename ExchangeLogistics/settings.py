@@ -15,6 +15,7 @@ SECRET_KEY = 'purple-unicorn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+
 ALLOWED_HOSTS = ['exlogistics-ci-cd.onrender.com', '127.0.0.1', 'https://exlogistics-ci-cd.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', 'https://exlogistics-ci-cd.onrender.com']
