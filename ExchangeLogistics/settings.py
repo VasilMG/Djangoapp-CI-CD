@@ -17,7 +17,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['https://exlogistics-ci-cd.onrender.com', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://https://exlogistics-ci-cd.onrender.com', 'http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://exlogistics-ci-cd.onrender.com', 'http://127.0.0.1']
 
 
 # Application definition
