@@ -1,0 +1,67 @@
+.sign-profile-body {
+    height: 100%;
+    background-image: url("../images/login-back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.h3-profile-form {
+    color: white;
+    font-weight: bold;
+}
+
+.sign-profile-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3em;
+    border: 1px solid #000000;
+    border-radius: 0.5em;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    font-weight: bold;
+    color: white;
+    gap: 1em;
+    width: 50%;
+}
+
+.item-form {
+    width: 100%;
+}
+
+.l-tag {
+    padding-bottom: 0.5em;
+}
+.input-item input {
+    width: 100%;
+}
+.footer-profile {
+    text-align: center;
+    color: white;
+}
+.item-form ul {
+    list-style-type: none;
+    color: red;
+}
+
+#logo-clear_id {
+    width: fit-content;
+}
+
+@media (width  < 600px) {
+    .profile-form {
+        width: 90%;
+    }
+
+}

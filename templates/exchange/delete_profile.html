@@ -1,0 +1,44 @@
+{% extends 'bases/base_logged_in.html' %}
+{% load static %}
+
+{% block page_content %}
+    <!text-bg-dark>
+    <div class="upper">
+        <div class="container col-xxl-8 px-4 py-5" ;>
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    {% if object.logo %}
+                        <img src="/media/{{ object.logo }}" class="d-block mx-lg-auto img-fluid"
+                             alt="Place for your logo" loading="lazy" width="300px" height="300px">
+                    {% else %}
+                        <img src="{% static 'images/shutterstock_583717939.jpg' %}" class="d-block mx-lg-auto img-fluid"
+                             alt="Place for your logo" loading="lazy" width="300px" height="300px">
+                    {% endif %}
+                </div>
+                <div class="col-lg-6">
+                    {% if object.pk == user.pk %}
+                        <h3> Hello, {{ user.username }}!</h3>
+                        <hr>
+                        <p class="lead"> Company: <span style="padding-left: 3em">{{ object.company_name }}</span></p>
+                    {% else %}
+                        <h1 class="display-5 fw-bold lh-1 mb-3" style="color: white">{{ object.company_name }}!</h1>
+                    {% endif %}
+                    <p class="lead">Address:<span>{{ object.address }}, {{ object.country }}</span></p>
+                    <p class="lead">Contact person: <span>{{ object.contact_person }}</span></p>
+                    <p class="lead">Email: <span>{{ object.company_email }}</span></p>
+                    <p class="lead">Phone number: <span>{{ object.phone_number }}</span></p>
+                    <div class="confirm-delete" style="color: red; font-weight: bold; font-size: 1.5em">
+                        Are you sure you want to delete this profile and all offers associated with it?
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+
+                        <a href="{% url 'confirm_delete' pk=user.pk %}">
+                            <button type="button" class="del-button">Delete</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,218 @@
+{% extends 'common/../bases/base_not_logged.html' %}
+{% load static %}
+{% block page_content %}
+
+    <div class="container px-4 py-5" id="hanging-icons">
+        <h2 class="head-services">Services</h2>
+        <hr>
+
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            {% if not primary_services and not secondary_services %}
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Road Transport Solutions</h3>
+                        <hr>
+                        <p>Road freight is the transport of goods from one location to another (a place of loading and a
+                            place of unloading) by means of motor vehicles via a road network. Commercial road freight
+                            transport is the transport of goods on a business basis by logistics companies or
+                            forwarders. In-company transports organized by the enterprises themselves, for example
+                            between different business locations within the context of internal production processes,
+                            are thus not classified as commercial freight transport.</p>
+                        <h6>Contact us:</h6>
+                        <ul>
+                            <li>Contact person:
+                                <div style="font-weight: bold">Petar Petrov</div>
+                            </li>
+                            <li>Email:
+                                <div style="font-weight: bold">p.petrov@elogistics.com</div>
+                            </li>
+                            <li>Phone number:
+                                <div style="font-weight: bold">+35944154548181</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Maritime Transport</h3>
+                        <hr>
+                        <p>Historically, sea freight shipping was a key driver of the development of international
+                            commerce. Shipping goods by sea is still popular nowadays due to low cost, high sea vessel
+                            load capacity, and minimal restrictions on vessel carrying capacity. Sea freight services
+                            allows substantially lower transportation costs in case of long-distance goods carriage. We
+                            encourage our customers to take full advantage of our containerized cargo transportation
+                            related services. This transport mode is reliable and efficient, especially in case of
+                            long-distance and multimodal solutions.</p>
+                        <h6>Contact us:</h6>
+                        <ul>
+                            <li>Contact person:
+                                <div style="font-weight: bold">Stamat Stamatov</div>
+                            </li>
+                            <li>Email:
+                                <div style="font-weight: bold">s.stamatov@elogistics.com</div>
+                            </li>
+                            <li>Phone number:
+                                <div style="font-weight: bold">+35944481058155</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Air Transport</h3>
+                        <hr>
+                        <p>Currently, all countries have different airports. With the tourism boom and the search for
+                            new experiences, this sector found a niche in which to grow. In fact, it is one of the means
+                            of transport most used by passengers during their vacation periods and to go to business
+                            appointments.
+                            However, as a consequence of the agility and speed it generates, it is also being used more
+                            and more as a means of transporting goods. It has even become the preferred means of
+                            transport for sending specific, high-cost or urgently received products.</p>
+                        <h6>Contact us:</h6>
+                        <ul>
+                            <li>Contact person:
+                                <div style="font-weight: bold">Alex Georgiev</div>
+                            </li>
+                            <li>Email:
+                                <div style="font-weight: bold">a.georgiev@elogistics.com</div>
+                            </li>
+                            <li>Phone number:
+                                <div style="font-weight: bold">+359311616161616</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Warehouse Solutions</h3>
+                        <hr>
+                        <p>Our global footprint and extensive network means we have facilities ready to handle your
+                            supply chain, whether at origin or destination. By combining shipping with warehousing and
+                            distribution, you benefit from a seamless end-to-end solution with fewer logistic service
+                            providers. Complexity is reduced, and you gain speed, control and visibility.</p>
+                        <h6>Contact us:</h6>
+                        <ul>
+                            <li>Contact person:
+                                <div style="font-weight: bold">Maria Ilieva</div>
+                            </li>
+                            <li>Email:
+                                <div style="font-weight: bold">m.ilieva@elogistics.com</div>
+                            </li>
+                            <li>Phone number:
+                                <div style="font-weight: bold">+3111518481551</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    </div>
+                    <div>
+                        <h3 class="fs-2">4PL Solutions</h3>
+                        <hr>
+                        <p>Fourth-party logistics, or 4PL, is a business operating model in which the supply chain
+                            management and logistics are completely outsourced to one outside service provider. This
+                            partner will be in charge of overseeing the whole supply chain, including the evaluation,
+                            design, construction, implementation, and measurement of the client’s solutions. One partner
+                            oversees the coordination of warehouses, shipping firms, freight, and agents while managing
+                            the supply chain on behalf of the client.</p>
+                        <h6>Contact us:</h6>
+                        <ul>
+                            <li>Contact person:
+                                <div style="font-weight: bold">Hristo Hristov</div>
+                            </li>
+                            <li>Email:
+                                <div style="font-weight: bold">h.hristov@elogistics.com</div>
+                            </li>
+                            <li>Phone number:
+                                <div style="font-weight: bold">+35964313155151</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Customs Clearance</h3>
+                        <hr>
+                        <p>Customs clearance is the act of taking goods through the customs authority to facilitate the
+                            movement of cargo into a country (import) and outside the country (export).
+                            Also, the customs clearance means a document issued by the customs authority to a shipper
+                            indicating that all duties have been paid and the shipper’s goods is cleared for export.</p>
+                        <h6>Contact us:</h6>
+                        <ul>
+                            <li>Contact person:
+                                <div style="font-weight: bold">Elena Yonova</div>
+                            </li>
+                            <li>Email:
+                                <div style="font-weight: bold">e.yonkova@elogistics.com</div>
+                            </li>
+                            <li>Phone number:
+                                <div style="font-weight: bold">+3593131515154</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            {% else %}
+                {% for pr_service in primary_services %}
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        </div>
+                        <div>
+                            <h3 class="fs-2">{{ pr_service.service_type }}</h3>
+                            <hr>
+                            <p>{{ pr_service.long_text }}</p>
+                            <h6>Contact us:</h6>
+                            <ul>
+                                <li>Contact person:
+                                    <div style="font-weight: bold">{{ pr_service.contact_person }}</div>
+                                </li>
+                                <li>Email:
+                                    <div style="font-weight: bold">{{ pr_service.general_email }}</div>
+                                </li>
+                                <li>Phone number:
+                                    <div style="font-weight: bold">{{ pr_service.phone_number }}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for sc_service in secondary_services %}
+                    <div class="col d-flex align-items-start">
+                        <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        </div>
+                        <div>
+                            <h3 class="fs-2">{{ sc_service.service_type }}</h3>
+                            <hr>
+                            <p>{{ sc_service.long_text }}</p>
+                            <h6>Contact us:</h6>
+                            <ul>
+                                <li>Contact person:
+                                    <div style="font-weight: bold">{{ sc_service.contact_person }}</div>
+                                </li>
+                                <li>Email:
+                                    <div style="font-weight: bold">{{ sc_service.general_email }}</div>
+                                </li>
+                                <li>Phone number:
+                                    <div style="font-weight: bold">{{ sc_service.phone_number }}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}

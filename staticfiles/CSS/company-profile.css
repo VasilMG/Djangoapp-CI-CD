@@ -1,0 +1,97 @@
+.d-block {
+    border-radius: 50em;
+}
+
+/*div.container*/
+/*.col-xxl-8*/
+
+.col-xxl-8 {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    font-weight: bold;
+    color: white;
+    border-radius: 1em;
+}
+
+.upper {
+    padding: 2em;
+    background-image: url("../images/companie-profile1024x520.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p.lead {
+    color: white;
+    /*font-weight: bold;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-offers {
+    text-align: center;
+}
+
+.no-offers {
+    text-align: center;
+}
+.del-button {
+    width: 6em;
+    height: 3em;
+    border-radius: 0.5em;
+    background: red;
+}
+
+.del-button:hover {
+    background: #6b2b2b;
+    color: white;
+}
+
+.edit-button {
+    width: 6em;
+    height: 3em;
+    border-radius: 0.5em;
+    background: green;
+}
+.edit-button:hover {
+    background: #0fa90f;
+    color: white;
+}
+
+div.confirm-delete {
+    font-weight: bold;
+    color: red;
+    font-size: 2em;
+}
+
+@media (width <= 600px){
+    .table {
+        font-size: 0.7em;
+    }
+    div.col-lg-6:nth-child(2) {
+        text-align: right;
+    }
+    .d-grid{
+        justify-content: flex-start;
+    }
+}
+
+@media (width <= 500px){
+    .table {
+        font-size: 0.7em;
+    }
+    div.col-lg-6:nth-child(2) {
+        text-align: left;
+    }
+    .d-grid{
+        justify-content: flex-start;
+    }
+    p.lead{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bd-example {
+        overflow: auto;
+    }
+
+}

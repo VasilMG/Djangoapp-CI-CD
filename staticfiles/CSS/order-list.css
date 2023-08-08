@@ -1,0 +1,32 @@
+.pagination {
+    --bs-pagination-font-size: 0.8rem;
+}
+
+.pagination li{
+    border: 1px solid;
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.table {
+    border: 1px solid;
+    padding: 0 1em;
+}
+
+.table-offers {
+    padding: 0 1em;
+}
+
+form.d-flex {
+    width: 50%;
+}
+
+.offers-content {
+    height: 80vh;
+}
+
+@media (width <= 600px) {
+    form.d-flex {
+    width: 70%;
+}
+}

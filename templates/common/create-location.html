@@ -1,0 +1,27 @@
+{% extends 'bases/base-settings.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="settings-create">
+        <form class="primary-form" action="{% url 'create_location' %}" method="post" enctype="multipart/form-data">
+            <h4 style="text-align: center">Create Model</h4>
+            {% if form.errors %}
+                {% for x in form.errors.values %}
+                    {% if forloop.last %}
+                        {{ x }}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% csrf_token %}
+            {% for item in form %}
+                {{ item.label_tag }}
+                {{ item }}
+                {% if item.errors %}
+                    {{ item.errors }}
+                {% endif %}
+            {% endfor %}
+            <button class="form-create-button" type="submit">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,253 @@
+{% extends 'common/../bases/base_not_logged.html' %}
+{% load static %}
+
+{% block page_content %}
+
+    <main>
+        {% if not primary_services %}
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <svg width="100%" height="100%" preserveAspectRatio="none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="100%" height="100%" fill="#777"/>
+                            <image xlink:href="{% static 'images/trucks.1200x800.jpg' %}" x="0" y="0" height="100%"
+                                   width="100%"
+                                   preserveAspectRatio="none"/>
+                        </svg>
+
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1 style="font-weight:bolder; color: white">Road Transport
+                                </h1>
+                                <p style="color: white; font-weight: bolder">Take advantage of our fleet of more than
+                                    500 trucks.</p>
+                                <p><a class="btn btn-lg btn-primary" href="{% url 'services_main' %}">Contact us</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <svg width="100%" height="100%" preserveAspectRatio="none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="100%" height="100%" fill="#777"/>
+                            <image xlink:href="{% static 'images/Ship_MSC20003552.jpg' %}" x="0" y="0" height="100%"
+                                   width="100%"
+                                   preserveAspectRatio="none"/>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1 style="font-weight: bolder; color: white">Maritime Transport
+                                </h1>
+                                <p style="font-weight: bolder">LTL and FTL solutions for your needs.
+                                </p>
+                                <p><a class="btn btn-lg btn-primary" href="{% url 'services_main' %}">Contact us</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <svg width="100%" height="100%" preserveAspectRatio="none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="100%" height="100%" fill="#777"/>
+                            <image xlink:href="{% static 'images/plane_front.jpg' %}" x="0" y="0" height="100%" width="100%"
+                                   preserveAspectRatio="none"/>
+                        </svg>
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1 style="color: white; font-weight: bolder;">Air Transport
+                                </h1>
+                                <p style="font-weight: bolder; color: white ">We deliver packages fast to all major
+                                    airports.
+                                </p>
+                                <p><a class="btn btn-lg btn-primary" href="{% url 'services_main' %}">Contact us</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        {% else %}
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    {% for pr_service in primary_services %}
+                        {% if forloop.first %}
+                            <div class="carousel-item active">
+                                <svg width="100%" height="100%" preserveAspectRatio="none"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="100%" height="100%" fill="#777"/>
+                                    <image xlink:href="{{ pr_service.background_picture.url }}" x="0" y="0"
+                                           height="100%"
+                                           width="100%"
+                                           preserveAspectRatio="none"/>
+
+                                </svg>
+
+                                <div class="container">
+                                    <div class="carousel-caption text-start">
+                                        <h1 style="font-weight:bolder; color: white">{{ pr_service.service_type }}
+                                        </h1>
+                                        <p style="color: white; font-weight: bolder">{{ pr_service.short_text }}</p>
+                                        <p><a class="btn btn-lg btn-primary" href="{% url 'services_main' %}">Contact
+                                            us</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <svg width="100%" height="100%" preserveAspectRatio="none"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="100%" height="100%" fill="#777"/>
+                                    <image xlink:href="{{ pr_service.background_picture.url }}" x="0" y="0"
+                                           height="100%"
+                                           width="100%"
+                                           preserveAspectRatio="none"/>
+                                </svg>
+                                <div class="container">
+                                    <div class="carousel-caption">
+                                        <h1 style="font-weight: bolder; color: white">{{ pr_service.service_type }}
+                                        </h1>
+                                        <p style="font-weight: bolder">{{ pr_service.short_text }}
+                                        </p>
+                                        <p><a class="btn btn-lg btn-primary" href="{% url 'services_main' %}">Contact
+                                            us</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        {% endif %}
+
+
+        {% if not secondary_services %}
+            <div class="container marketing">
+
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img"
+                             aria-label="Placeholder: 140x140"
+                             preserveAspectRatio="none" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"/>
+                            <image xlink:href="{% static 'images/warehouse-icon-vector-23.png' %}" x="0" y="0" height="100%"
+                                   width="100%"
+                                   preserveAspectRatio="none"/>
+
+
+                        </svg>
+                        <h2 class="fw-normal">Warehouse Solutions
+                        </h2>
+                        <p>Take advantage of our three major hubs in Europe.
+                        </p>
+                        <p><a class="btn btn-secondary" href="{% url 'services_main' %}">Contact us</a></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img"
+                             aria-label="Placeholder: 140x140"
+                             preserveAspectRatio="none" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"/>
+                            <image xlink:href="{% static 'images/4pl_200.png' %}" x="0" y="0" height="100%" width="100%"
+                                   preserveAspectRatio="none"/>
+
+                        </svg>
+                        <h2 class="fw-normal">4PL Solutions
+                        </h2>
+                        <p>We offer 3PL and 4PL services to our clients.
+                        </p>
+                        <p><a class="btn btn-secondary" href="{% url 'services_main' %}">Contact us</a></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img"
+                             aria-label="Placeholder: 140x140"
+                             preserveAspectRatio="none" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#777"/>
+                            <image xlink:href="{% static 'images/customs-icon-4.png' %}" x="0" y="0" height="100%" width="100%"
+                                   preserveAspectRatio="none"/>
+
+                        </svg>
+                        <h2 class="fw-normal">Customs Clearance Services
+                        </h2>
+                        <p>We provide customs services throughout the EU.
+                        </p>
+                        <p><a class="btn btn-secondary" href="{% url 'services_main' %}">Contact us</a></p>
+                    </div>
+                </div>
+
+
+            </div>
+        {% else %}
+            <div class="container marketing">
+
+
+                <div class="row">
+                    {% for sec_service in secondary_services %}
+                        <div class="col-lg-4">
+                            <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 role="img"
+                                 aria-label="Placeholder: 140x140"
+                                 preserveAspectRatio="none" focusable="false"><title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#777"/>
+                                <image xlink:href="{{ sec_service.icon.url }}" x="0" y="0" height="100%"
+                                       width="100%"
+                                       preserveAspectRatio="none"/>
+
+
+                            </svg>
+                            <h2 class="fw-normal">{{ sec_service.service_type }}
+                            </h2>
+                            <p>{{ sec_service.short_text }}
+                            </p>
+                            <p><a class="btn btn-secondary" href="{% url 'services_main' %}">Contact us</a></p>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+
+            </div>
+        {% endif %}
+
+    </main>
+{% endblock %}

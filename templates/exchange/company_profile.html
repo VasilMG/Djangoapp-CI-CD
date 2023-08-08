@@ -1,0 +1,140 @@
+{% extends 'bases/base_logged_in.html' %}
+{% load static %}
+
+{% block page_content %}
+    <!text-bg-dark>
+    <div class="upper">
+        <div class="container col-xxl-8 px-4 py-5" ;>
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    {% if object.logo %}
+                        <img src="/media/{{ object.logo }}" class="d-block mx-lg-auto img-fluid"
+                             alt="Place for your logo" loading="lazy" width="300px" height="300px">
+                    {% else %}
+                        <img src="{% static 'images/shutterstock_583717939.jpg' %}" class="d-block mx-lg-auto img-fluid"
+                             alt="Place for your logo" loading="lazy" width="300px" height="300px">
+                    {% endif %}
+                </div>
+                <div class="col-lg-6">
+                    {% if object.pk == user.pk %}
+
+                        <h3> Hello, {{ user.username }}!</h3>
+                        <hr>
+                        <p class="lead"> Company: <span style="padding-left: 3em">{{ object.company_name }}</span></p>
+                    {% else %}
+                        <h1 class="display-5 fw-bold lh-1 mb-3" style="color: white">{{ object.company_name }}</h1>
+                    {% endif %}
+                    <p class="lead">Address:<span>{{ object.address }}, {{ object.country }}</span></p>
+                    <p class="lead">Contact person: <span>{{ object.contact_person }}</span></p>
+                    <p class="lead">Email: <span>{{ object.company_email }}</span></p>
+                    <p class="lead">Phone number: <span>{{ object.phone_number }}</span></p>
+                    {% if object.pk == user.pk %}
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="{% url 'edit_profile' pk=object.pk %}">
+                                <button type="button" class="edit-button">Edit</button>
+                            </a>
+                            <a href="{% url 'delete_profile' pk=user.pk %}">
+                                <button type="button" class="del-button">Delete</button>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="padding: 20px; padding-top: 50px">
+        <div style="padding: 10px">
+            {% if object.pk == user.pk %}
+                <h3 class="section-offers">Your offers on the market</h3>
+                <hr>
+            {% else %}
+                <h3 class="section-offers">Offers on the market</h3>
+                <hr>
+            {% endif %}
+        </div>
+        {% if offers %}
+            <div class="bd-example-snippet bd-code-snippet">
+                <div class="bd-example">
+                    <table class="table table-hover" style="border: 1px solid">
+                        <thead style="border: 1px solid">
+                        <tr>
+                            <th scope="col">Type</th>
+                            <th scope="col">Loading date</th>
+                            <th scope="col">Loading Place</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Unloading Date</th>
+                            <th scope="col">Unloading Place</th>
+                            <th scope="col">Country</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+
+                        {% for item in offers %}
+                            {% if item.offer_type|stringformat:"s" == "Freight" %}
+
+                                <tr class="table-primary">
+
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.offer_type }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.loading_date }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.loading_place }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.loading_country }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.load_size }}
+                                        LDM
+                                    </td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.weight }}
+                                        T
+                                    </td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.unloading_date }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.unloading_place }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'">{{ item.unloading_country }}</td>
+                                </tr>
+                            {% else %}
+                                <tr class="table-primary">
+
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.offer_type }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.loading_date }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.loading_place }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.loading_country }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.load_size }} LDM
+                                    </td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.weight }} T
+                                    </td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.unloading_date }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.unloading_place }}</td>
+                                    <td onclick="location.href='{% url 'offer_details' pk=item.pk %}'"
+                                        style="background-color: cadetblue">{{ item.unloading_country }}</td>
+                                </tr>
+                            {% endif %}
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+        {% else %}
+            <div>
+                <h3 class="no-offers">You have no offers yet</h3>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+    

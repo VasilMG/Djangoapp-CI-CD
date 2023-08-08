@@ -1,0 +1,33 @@
+.network-body {
+    height: 100%;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.locations {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: white;
+    text-align: center;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    padding-top: 1em;
+    padding-bottom: 2em;
+
+}
+
+.location-card {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    padding: 1em 0;
+    border: 1px solid #000;
+    border-radius: 0.5em;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    font-weight: bold;
+}

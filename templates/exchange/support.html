@@ -1,0 +1,27 @@
+{% extends 'common/../bases/base_logged_in.html' %}
+{% load static %}
+{% block page_content %}
+
+
+    <div class="support">
+        {% if not support %}
+            <div class="support-card">
+
+                <h1 class="header-support">Support</h1>
+                <h4> Our support team is available 24 hours, 7 days a week!</h4>
+                <p class="support-detail">Email: <span>support@elogistics.com</span></p>
+                <p class="support-detail">Phone number: <span>+359 999 999 100</span></p>
+
+            </div>
+        {% else %}
+            <div class="support-card">
+
+                <h1 class="header-support">Support</h1>
+                <h4>{{ support.support_text }}</h4>
+                <p class="support-detail">Email: {{ support.support_email }}</p>
+                <p class="support-detail">Phone number: {{ support.support_phone_number }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

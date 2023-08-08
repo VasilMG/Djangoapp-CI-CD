@@ -1,0 +1,33 @@
+.support {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.support-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #d3d2d2;
+    padding: 1em;
+    border-radius: 0.5em;
+    text-align: center;
+}
+
+.support-detail {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header-support {
+    font-weight: bold;
+}
+
+.support-card > p {
+    display: flex;
+    flex-direction: column;
+}
