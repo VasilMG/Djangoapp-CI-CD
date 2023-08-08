@@ -1,5 +1,6 @@
 import datetime
 from django import forms
+from django.core.exceptions import ValidationError
 
 from django.contrib.auth import get_user_model, login
 from django.http import HttpResponse
@@ -377,7 +378,7 @@ class TestDateValidator(TestCase):
 
     def test_date_validator_when_date_is_in_the_past_expect_error(self):
         value = datetime.date.today() - datetime.timedelta(days=1)
-        with self.assertRaises(ValueError) as ve:
+        with self.assertRaises(ValidationError) as ve:
             date_validator(value)
         self.assertIsNotNone(ve.exception)
 
@@ -395,15 +396,15 @@ class TestValidateLoadSize(TestCase):
 
     def test_validate_size_when_given_value_is_bigger_than_15_expect_error(self):
         value = 16
-        with self.assertRaises(ValueError) as va:
+        with self.assertRaises(ValidationError) as va:
             validate_load_size(value)
-        self.assertEqual('The value should be between 0 and 15.00 meters', str(va.exception))
+        self.assertEqual('The value should be between 0 and 15.00 meters', str(va.exception.message))
 
     def test_validate_size_when_given_value_is_less_than_0_expect_error(self):
         value = -1
-        with self.assertRaises(ValueError) as va:
+        with self.assertRaises(ValidationError) as va:
             validate_load_size(value)
-        self.assertEqual('The value should be between 0 and 15.00 meters', str(va.exception))
+        self.assertEqual('The value should be between 0 and 15.00 meters', str(va.exception.message))
 
 
 class TestValidateLoadWeight(TestCase):
@@ -414,15 +415,15 @@ class TestValidateLoadWeight(TestCase):
 
     def test_validate_size_when_given_value_is_bigger_than_28_expect_error(self):
         value = 29
-        with self.assertRaises(ValueError) as va:
+        with self.assertRaises(ValidationError) as va:
             validate_load_weight(value)
-        self.assertEqual('The value should be between 0 and 28 tons.', str(va.exception))
+        self.assertEqual('The value should be between 0 and 28 tons.', str(va.exception.message))
 
     def test_validate_size_when_given_value_is_less_than_0_expect_error(self):
         value = -1
-        with self.assertRaises(ValueError) as va:
+        with self.assertRaises(ValidationError) as va:
             validate_load_weight(value)
-        self.assertEqual('The value should be between 0 and 28 tons.', str(va.exception))
+        self.assertEqual('The value should be between 0 and 28 tons.', str(va.exception.message))
 
 
 class TestPhoneNumberValidator(TestCase):
@@ -433,21 +434,21 @@ class TestPhoneNumberValidator(TestCase):
 
     def test_phone_validator_when_value_does_not_start_with_plus_expect_error(self):
         value = '0359888888888'
-        with self.assertRaises(ValueError) as va:
+        with self.assertRaises(ValidationError) as va:
             phone_number_validator(value)
 
-        self.assertEqual("Value must start with '+' followed by 9 up to 15 digits.", str(va.exception))
+        self.assertEqual("Phone number must start with '+' followed by 9 up to 15 digits.", str(va.exception.message))
 
     def test_phone_validator_when_value_has_eight_digits_expect_error(self):
         value = '+35988888'
-        with self.assertRaises(ValueError) as va:
+        with self.assertRaises(ValidationError) as va:
             phone_number_validator(value)
 
-        self.assertEqual("Value must start with '+' followed by 9 up to 15 digits.", str(va.exception))
+        self.assertEqual("Phone number must start with '+' followed by 9 up to 15 digits.", str(va.exception.message))
 
     def test_phone_validator_when_value_has_sixteen_digits_expect_error(self):
         value = '+3598888888888888'
-        with self.assertRaises(ValueError) as va:
+        with self.assertRaises(ValidationError) as va:
             phone_number_validator(value)
 
-        self.assertEqual("Value must start with '+' followed by 9 up to 15 digits.", str(va.exception))
+        self.assertEqual("Phone number must start with '+' followed by 9 up to 15 digits.", str(va.exception.message))
