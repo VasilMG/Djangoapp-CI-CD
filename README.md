@@ -1,5 +1,6 @@
 # ExchangeLogisticsApp
-This is an app for a logistics company with built in freight exchange. (including tests for both SSR and API endpoints)
+This is an app for a logistics company deployed to Render.com with CI/CD pipeline.
+You can check it out at: https://exchange-logistics-ci-cd.onrender.com
 
 Stack used:
  - python
@@ -8,7 +9,7 @@ Stack used:
  - bootstrap
  
  This project has both - server side rendering and APIs.
- All endpoints are visible in the swagger url -- - http://127.0.0.1:8000/swagger-ui/
+ All endpoints are visible in the swagger url -- - http://127.0.0.1:8000/swagger-ui/ or https://exchange-logistics-ci-cd.onrender.com/swagger-ui/
  
  
  
@@ -24,58 +25,7 @@ Stack used:
  A user can sign up with username and password. After that a blank profile is created and the user should fill the neccessary data for his profile.
  After that he can publish freight or truck offers on the market. The user can search for siutable offers on the market and see the offer's details by clicking on it.
  Every offer includes information about the company that had posted it and also a link to this company's profile, where the user can see all actual offers of this particular company.
- 
- # Run the project
- 
- I. Using Docker image:
- 
- 1. Run the docker image with the following command:
- - docker run --name logistics-app  -d -p 8000:8000 vasilmg/logistics-app:latest
- 
- 2. Open your browser and type - http://127.0.0.1:8000/ or http://localhost:8000/
- 
- II. Clone the repository from GitHub
- 
- 1. Clone the repository
 
- 2. Open it with your preferred IDE and create a virtual environment
-
-   2.1 Windows:
- 
-    Create virtual environment:
-    - python -m venv ./venv
-
-    Activate the environment:
-     - venv/Scripts/activate
-
-  2.2 Linux:
- 
-    Create virtual environment:
-    - python3 -m venv ./venv
-
-    Activate the environment:
-    - source ./venv/bin/activate 
-   <br/>
-   <br/>
-
-3. Install all dependencies
-  - pip install -r requirements.txt
-  
-4. Make the migrations
-  - python manage.py makemigrations
-  - python manage.py migrate
- 
-5. Run the project
- - python manage.py runserver
- 
-6. Finally open the project in your browser - http://127.0.0.1:8000/ or http://localhost:8000/
- 
-
- - If you wish, you can create a superuser with the command  -> python manage.py createsuperuser
- - After that through the admin page (http://127.0.0.1:8000/admin/) you can create a staff user/group so that you can access the 'Settings' feature.
-
- 
- I have used PostgresSQL but I have left both Postgres and SQLite settings in the settings.py file. So feel free to use the DB you prefer.
  
   - Below you can find some photos:
  
